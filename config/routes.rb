@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get "youtube_captions", to: "tools#youtube_captions_for_query"
+  post "openai_response", to: "tools#openai_response"
 end

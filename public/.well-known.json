@@ -1,0 +1,36 @@
+{
+  "name": "youtube_captions_for_query",
+  "description": "Retrieves subtitles for videos matching a text query",
+  "input_schema": {
+    "type": "object",
+    "properties": {
+      "query": { "type": "string", "description": "Search term (e.g., 'cat videos')" }
+    },
+    "required": ["query"]
+  },
+  "output_schema": {
+    "type": "array",
+    "items": {
+      "type": "object",
+      "properties": {
+        "videoId": { "type": "string" },
+        "title": { "type": "string" },
+        "captions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "string" },
+              "language": { "type": "string" },
+              "name": { "type": "string" },
+              "isDraft": { "type": "boolean" },
+              "isCC": { "type": "boolean" },
+              "status": { "type": "string" },
+              "trackKind": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+} 
